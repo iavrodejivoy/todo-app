@@ -65,7 +65,7 @@ publishing {
             artifactId = 'todo-app'
             version = project.version
 
-            artifact(tasks.ShadowJar){
+            artifact(tasks.shadowJar){
                 classifier = null
             }
         }
@@ -74,10 +74,10 @@ publishing {
         maven{
             name = 'GitHubPackages'
             url = uri('https://github.com/iavrodejivoy/todo-app')
-            credentials(
-                    username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR"),
-                    password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
-            )
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
+                password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
+            }
         }
     }
 }
