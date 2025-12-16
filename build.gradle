@@ -1,6 +1,8 @@
 plugins {
     id 'java'
     id 'application'
+    id 'maven-publish'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
 group = 'org.example'
@@ -52,6 +54,6 @@ tasks.named('startShadowScripts') {
     dependsOn tasks.named('jar')
 }
 
-tasks.build {
-    depends0n shadowJar
+tasks.build{
+    dependsOn shadowJar
 }
