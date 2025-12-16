@@ -7,8 +7,7 @@ public class TodoApp {
     public static void main(String[] args) {
         TodoList list = new TodoList();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Simple Todo CLI. Commands: add <task>, remove <index>,
-                list, exit");
+        System.out.println("Simple Todo CLI. Commands: add <task>, remove <index>, list, exit");
         while (true) {
             System.out.print("> ");
             if (!scanner.hasNextLine()) break;
@@ -50,8 +49,7 @@ public class TodoApp {
                     scanner.close();
                     return;
                 default:
-                    System.out.println("Unknown command. Commands: add, remove,
-                            list, exit");
+                    System.out.println("Unknown command. Commands: add, remove, list, exit");
             }
         }
     }
